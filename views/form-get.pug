@@ -1,0 +1,26 @@
+extends base.pug
+
+block content
+    
+    div.container
+        div#imgTile
+            img(src="img/intuit.svg" alt="title" height="95" id="titleImage")  
+    div.icons
+        img.drop.icon(alt="mint-leaf" src='img/mint.svg' height="23")  
+        img.icon(alt="mint-leaf" src='img/mint-text.svg' height="23")  
+        img.icon(alt="mint-leaf" src='img/quickbooks.svg' height="23")  
+
+    form(action="/register" method='post')
+        p#legend Create an account
+        label.letter(for='name') Name:
+            input#name(type="text", name="name")
+        label.letter(for='email') Email:
+            input#email(type="text", name="email")
+        label.letter(for='adress') Address:
+            input#adress(type="text", name="adress")
+        label.letter(for='password') Password:
+            input#password(type="password", name="password") 
+        div.asub
+            input.submit(type="submit", name="done")   
+
+    di      

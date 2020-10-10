@@ -1,0 +1,200 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(236, 238, 241);
+    width: 100%;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .sing-container {
+    width: 22%;
+    height: 40px;
+    padding: 5px;
+    float: right;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -ms-flexbox;
+    flex-flow: row wrap;
+    font-size: 13px;
+  }
+  
+  .sign {
+    color: white;
+    background: #0277c5;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .sign i {
+    margin-left: 5px;
+  }
+  
+  #forgot {
+    color: #0277c7;
+  }
+  
+  .container {
+    text-align: center;
+    margin-top: 80px;
+  }
+  
+  .icons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  h1 {
+    color: rgb(156, 154, 154);
+  }
+  
+  form {
+    width: 33%;
+    height: 601px;
+    border: 1px solid #9c9c9c;
+    background-color: white;
+    border-bottom: 1px solid #c6c7c7;
+    margin:auto;
+  }
+  
+  footer {
+    margin-top: 40px;
+  }
+  
+  .letter {
+    display: block;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 1%;
+    font-size: 12px;
+  }
+  
+  .letter2 {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 2%; 
+  }
+  
+  #legend {
+    font-size: 22px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 95%;
+    height: 40px;
+  }
+  
+  label {
+    margin-top: 30px;
+  }
+  
+  #one-account {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  #learn {
+    font-size: small;
+    margin-bottom: 10%;
+    color: #4f7bcf;
+  }
+  
+  a {
+    text-decoration: none; 
+  }
+  .asub{
+    display: block;
+    margin: auto;
+  }
+  .submit {
+    background: #0277c5;
+    color: white;
+    padding: 2% 15% 2% 15%;
+    
+    width: 90%;
+    margin-left:20px;
+  }
+  
+  #warning {
+    font-size: 10px;
+    font-size: small;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  #greyBlock {
+    background-color: #eceef1;
+    font-size: x-small;
+    margin-top: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid #9c9c9c;
+  }
+  
+  .icon {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  
+  #titleImage {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  #footr span {
+    display: block;
+    text-align: center;
+  }
+  .anch {
+    color: black;
+    padding-right: 8px;
+  }
+  
+  .anch:hover {
+    text-decoration: underline;
+  }
+  .error
+{
+    background-color: rgb(248, 203, 203);
+    border: 1px solid rgb(245, 87, 87);
+    color: rgb(245, 49, 49);
+    padding: 10px 15px;
+}
+
+.dashboard
+{
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.user-post-area
+{
+    padding: 20px 0;
+}
+.greeting
+{
+    color: #222;
+    background-color: rgb(245, 255, 245);
+    border: 1px solid rgb(210, 231, 210);
+    padding: 1em;
+}
+.greeting span
+{
+    color: rgb(112, 172, 16);
+}
