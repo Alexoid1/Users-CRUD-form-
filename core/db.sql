@@ -10,7 +10,7 @@ CREATE TABLE users (
   name VARCHAR(50) NOT NULL,
   adress VARCHAR(100) NOT NULL,
   email VARCHAR(50) NOT NULL,
-  phone VARCHAR(15)
+  password VARCHAR(100)
 );
 
 -- to show all tables
