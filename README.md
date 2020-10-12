@@ -31,7 +31,7 @@
 
 - open terminal 
 - type (mysql -u root -p)
-- open database/db.sql
+- open core/db.sql
 - copy all content of the db file in the terminal(mysql shell)
 - open a new terminal
 - cd in the repo folder
