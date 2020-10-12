@@ -1,7 +1,6 @@
 const database = require('./database');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
-const yourPassword = "here";
+
 
 function User() {};
 
@@ -46,7 +45,61 @@ User.prototype = {
             // return the last inserted id. if there is no error
             callback(result.insertId);
         });
-    }
+    },
+    index: function(user, callback){
+       
+
+        let sql= `SELECT * FROM users`;
+
+        database.query(sql,user,function(err, result) {
+            
+            if(err) throw err
+
+            if(result) {
+                callback(result)
+          
+            }
+        });
+    },
+
+    delete: function(par,callback){
+        let sql= `DELETE FROM users WHERE id=${par.id}`;
+        database.query(sql,par,function(err, result) {
+            if(err) throw err
+            if(result) {
+                callback(result)
+          
+            }
+        });
+
+    },
+    edit: function(par,callback){
+        let sql = `SELECT * FROM users WHERE id = ${par.id}`;
+        database.query(sql,par,function(err, result) {
+            if(err) throw err
+            if(result) {
+                callback(result)
+          
+            }
+        });
+
+
+    },
+    update: function(userUpdate,reqs,callback){
+        console.log(userUpdate)
+        
+        let sql = `UPDATE users set ? WHERE id = ${reqs.id}`;
+        database.query(sql,userUpdate,function(err, result) {
+            if(err) throw err
+            if(result) {
+                callback(result)
+          
+            }
+        });
+
+
+    },
+
 
     
 

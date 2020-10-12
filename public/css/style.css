@@ -40,7 +40,7 @@
   
   .container {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 20px;
   }
   
   .icons {
@@ -61,11 +61,13 @@
   
   form {
     width: 33%;
-    height: 601px;
+    height: auto;
     border: 1px solid #9c9c9c;
     background-color: white;
     border-bottom: 1px solid #c6c7c7;
     margin:auto;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
   }
   
   footer {
@@ -197,4 +199,35 @@
 .greeting span
 {
     color: rgb(112, 172, 16);
+}
+
+.profi {
+  border:4px solid gray;
+  border-radius: 20px;
+  margin:10px;
+  padding: 10px;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.users-con{
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
+}
+
+.info {
+  width: 300px;
+}
+
+.icone {
+  margin-right: 20px;
+  height: 30px;
+  
+}
+
+.icone:hover{
+  color:red;  
 }

@@ -12,21 +12,20 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/users', (req, res, next) => {
-    let user = req.session.user;
+   
 
-    if(user) {
-        res.render('users', {opp:req.session.opp, name:user.name});
+        console.log(req.query)
+        res.render('users', {name:req.body.name});
         return;
-    }
-    res.redirect('/');
+   
+    
 });
 
 router.get('/login', (req, res, next) => {  
     
     user.login(req.body.name, req.body.email, req.body.adress, function(result){
         if(result) {
-            req.session.user=result;
-            req.session.opp=1;
+            
 
             res.redirect('/users');
         }else{
@@ -36,7 +35,7 @@ router.get('/login', (req, res, next) => {
 })
 
 router.post('/register', (req, res, next) => {  
-
+    const user= new User();
     let userInput = {
         name: req.body.name,
         email: req.body.email,
@@ -47,10 +46,9 @@ router.post('/register', (req, res, next) => {
     user.create(userInput, function(lastId) {
         if(lastId) {
             user.find(lastId, function(result){
-                req.session.user=result;
-                req.session.opp=0;
+                
 
-                res.redirect('/users');
+                res.redirect('/index');
             });
           
         }else{
@@ -59,15 +57,54 @@ router.post('/register', (req, res, next) => {
     }
 )});
 
-router.get('/loggout', (req, res, next) => {
-    // Check if the session is exist
-    if(req.session.user) {
-        // destroy the session and redirect the user to the index page.
-        req.session.destroy(function() {
-            res.redirect('/');
-        });
-    }
+router.get('/index',(req,res,next)=> {
+    const user= new User();
+    user.index(user,function(result){
+        if(user){
+            
+            res.render('index',{users:result});
+        }else{
+            console.log('error showing users')
+        }
+    })
+    
+})
+
+router.get('/delete/:id',(req,res,next)=> {
+    const user= new User();
+    
+    par=req.params
+    user.delete(par,function(result){
+        res.redirect('/index');
+    })
+
 });
+router.get('/edit/:id',(req,res,next)=> {
+    const user= new User();
+    
+    par=req.params
+    user.edit(par,function(result){
+        
+        res.render('edit',{title:"My application",user:result[0]});
+    })
 
+});
+router.post('/update/:id',(req,res,next)=> {
+    const user= new User();
+    let reqs=req.params
+    let userUpdate = {
+        name: req.body.name,
+        email: req.body.email,
+        adress: req.body.adress,
+        password: req.body.password,
+        
+    };
+    console.log(userUpdate.name,req.params)
+    
+    user.update(userUpdate,reqs,function(result){
+       
+        res.redirect('/index');
+    })
 
+});
 module.exports = router;

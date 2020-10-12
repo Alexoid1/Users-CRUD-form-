@@ -1,3 +1,26 @@
+extends base.pug
 
-extends form-get.pug
 block content
+    .dashboard 
+            .user 
+                h1.greeting.text-center Welcome to the user admin-app
+    div.users-con
+        each u in users
+            div.profi
+                div
+                    img(alt="mint-leaf" src='img/profile.png' height="90")
+                div.info
+                    strong Name:
+                    p=u.name
+                    strong Email:
+                    p=u.email
+                    strong Address:
+                    p=u.adress
+                    div 
+                        a(href=`/edit/${u.id}`) 
+                            span.icone
+                                i(class="fa fa-pencil fa-2x text-grey" aria-hidden="true")
+                        a(href=`/delete/${u.id}`)    
+                            span.icone
+                                i(class="fa fa-trash-o fa-2x text-grey" aria-hidden="true")    
+                
